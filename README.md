@@ -1,10 +1,10 @@
 **PRE REQUISITOS**
 
-Xampp  3.3.0 (Appache e MySQL)
-PHP 8.0.17 
-Laravel 9.2
-Node.js
-Composer 2.3.3
+    Xampp  3.3.0 (Appache e MySQL)
+    PHP 8.0.17 
+    Laravel 9.2
+    Node.js
+    Composer 2.3.3
 
 **INICIANDO**
 
