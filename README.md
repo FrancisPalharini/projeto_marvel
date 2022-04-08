@@ -15,8 +15,10 @@
     5.  Entre no diretório onde extraiu o projeto e de o comando "composer install"
     6.  O processo de instalação irá inicar ao final deve aparecer {
         Use the 'composer fund' commandto findout more!
-    } 
-    7.  Em seguida rode "php artisan serve";
+        } 
+    7.  Em seguida rode "php artisan serve" em seguida deve retornar {
+        "Starting Laravel development server: http://localhost:8000
+        }
     8.  Abra o navegador e entre em http://localhost:8080/phpmyadmin/
     9.  Crie um banco de dados com o nome 'projeto_marvel';
     10. Digite o comando 'php artisan migrate', se o banco for porpulado com novas tabelas o seu uso esta pronto.
