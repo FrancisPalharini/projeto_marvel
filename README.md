@@ -1,12 +1,13 @@
 **PRE REQUISITOS
 **
+
 Xampp  3.3.0 (Appache e MySQL)
 PHP 8.0.17 
 Laravel 9.2
 Node.js
 Composer 2.3.3
 
-**INSTALAÇÃO**
+**INICIANDO**
 
 1.  Instale o Xampp para simular o servidor local. Os pacotes necesários são o PHP, MySQL e o Apache.
 2.  Start o Xampp e inicie o Appache e o MySQL.
