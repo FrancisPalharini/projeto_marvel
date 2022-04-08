@@ -15,3 +15,6 @@
     5.  Se obter a sequinte resposta {
         Starting Laravel development server: http://127.0.0.1:8000
         } sua máquina já está configurada para usar a API.
+
+**DOCUMENTAÇÃO DE USO**
+    https://documenter.getpostman.com/view/20336362/UVyxPD61
