@@ -11,17 +11,19 @@
     1.  Instale o Xampp para simular o servidor local. Os pacotes obrigatórios são o PHP, MySQL e o Apache;
     2.  Start o Xampp e inicie o Appache e o MySQL;
     3.  Faça download do projeto e extraia;
-    4.  Abra o promt de comando de seu computador;
-    5.  Entre no diretório onde extraiu o projeto e de o comando "composer install"
-    6.  O processo de instalação irá inicar ao final deve aparecer {
+    4.  Faça um cópia do arquivo .env.example e remonei para  .env;
+    5.  No arquivo .env você pode alterar as informações de usuário e senha do seu banco de dados, caso seja diferente do que ja se encontra no arquivo; 
+    5.  Abra o promt de comando de seu computador;
+    6.  Entre no diretório onde extraiu o projeto e de o comando "composer install"
+    7.  O processo de instalação irá inicar ao final deve aparecer {
         Use the 'composer fund' commandto findout more!
         } 
-    7.  Em seguida rode "php artisan serve" em seguida deve retornar {
+    8.  Em seguida rode "php artisan serve" em seguida deve retornar {
         "Starting Laravel development server: http://localhost:8000
         }
-    8.  Abra o navegador e entre em http://localhost:8080/phpmyadmin/
-    9.  Crie um banco de dados com o nome 'projeto_marvel';
-    10. Digite o comando 'php artisan migrate', se o banco for porpulado com novas tabelas o seu uso esta pronto.
+    9.  Abra o navegador e entre em http://localhost:8080/phpmyadmin/
+    10.  Crie um banco de dados com o nome 'projeto_marvel' (script SQl: create database 'projeto_marvel' .........
+    11. Digite o comando 'php artisan migrate', se o banco for porpulado com novas tabelas o seu uso esta pronto.
  
 
 **DOCUMENTAÇÃO**
