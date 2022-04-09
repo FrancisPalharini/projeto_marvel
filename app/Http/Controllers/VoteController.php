@@ -19,17 +19,16 @@ class VoteController extends Controller
             'team'=>'required',
             'age'=>'required',
             'genre'=> 'required',
-            'vote'=>'required',
         ]);
 
         $votacion= Vote::create([
             
             'id_prod'=>$request->id_prod,
-            'name_employee'=>$request->id_prod,
+            'name_employee'=>$request->name_employee,
             'team'=>$request->team,
             'age'=>$request->age,
             'genre'=> $request->genre,
-            'vote'=>$request->vote,
+            'vote'=>1,
         ]);
         #messagem de finalização positiva ou negativa ??????
         return response()->json([
