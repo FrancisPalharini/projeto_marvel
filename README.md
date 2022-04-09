@@ -22,8 +22,8 @@
         "Starting Laravel development server: http://localhost:8000
         }
     9.  Abra o navegador e entre em http://localhost:8080/phpmyadmin/
-    10.  Crie um banco de dados com o nome 'projeto_marvel' (script SQl: create database 'projeto_marvel' .........
-    11. Digite o comando 'php artisan migrate', se o banco for porpulado com novas tabelas o seu uso esta pronto.
+    10.  Crie um banco de dados com o nome 'projeto_marvel' (script SQl: create database database_name character set UTF8 collate utf8_general_ci;)
+    11. Digite o comando 'php artisan migrate', se o banco for porpulado com novas tabelas o seu uso está pronto.
  
 
 **DOCUMENTAÇÃO**
