@@ -6,22 +6,37 @@ CRIANDO USER {
     1.  utilize a rota (Route::post('/register',[AuthController::class,'register'])->name('register.create');
     ) passe os seguintes parametros: {name, email e password}
     2. espera-se o seguinte resultados:{
-
+            {
+                "user": {
+                "name": "admin",
+                "email": "admin@examplo.com',
+                "updated_at": "2022-04-08T16:33:34.000000Z",
+                "created_at": "2022-04-08T16:33:34.000000Z",
+                "id": 1
+                },
+                "token": "1|tvQYDncd5dLV8cozRaa87v9wAuqbEFJcLxnweanM"
+                }
     }
     -login
     1.  utilize a rota (Route::post('/login',[AuthController::class,'login'])->name('register.login');)
     e passe os seguintes parametros: {email e password}
     2. espera-se o seguinte resultados:{
-
+            {
+                "message": "login done",
+                "token": "2|7QmQswGFSAy1j7pBWAKtfTUrvDvTCRKWCvc4VJXi"
+                }
     }
-}
+
 
 CRIANDO NOVA PRODUCTION {
     -login com user administrativo
     1.  utilize a rota (Route::post('/login',[AuthController::class,'login'])->name('register.login');)
     e passe os seguintes parametros: {email e password}
     2. espera-se o seguinte resultados:{
-
+        {
+            "message": "login done",
+            "token": "2|7QmQswGFSAy1j7pBWAKtfTUrvDvTCRKWCvc4VJXi"
+                }
 
     }
     3. salve o token que foi gerado;
@@ -31,19 +46,28 @@ CRIANDO NOVA PRODUCTION {
     6. o token salvo  deve ser inserido na aba autorização com o tipo bearer token;
     7. headers deve conter [{"key":"Accept","value":"application/json","description":null,"type":"text","enabled":true}];
     8. espera-se o seguinte resultados:{
+        {
+            "name": "Homem de Ferro", "
+            release_date": "2008-04-30",
+            "type": "M",
+            "director": "Jon Favreau",
+            "updated_at": "2022-04-08T16:40:50.000000Z",
+            "created_at": "2022-04-08T16:40:50.000000Z",
+            "id": 1
+            }
 
-
+        }
     }
-    }
-}
-
 
 EDITANDO UMA PRODUCTION{
     -login com user administrativo
     1.  utilize a rota (Route::post('/login',[AuthController::class,'login'])->name('register.login');)
     e passe os seguintes parametros: {email e password}
     2. espera-se o seguinte resultados:{
-
+        {
+            "message": "login done",
+            "token": "2|7QmQswGFSAy1j7pBWAKtfTUrvDvTCRKWCvc4VJXi"
+                }
     }
     3. salve o token que foi gerado;
     4. utilize a rota     Route::put('/productions/{id}', [ProductionController::class, 'update'])->name('productions_id.update');
@@ -52,9 +76,10 @@ EDITANDO UMA PRODUCTION{
     8. o token salvo  deve ser inserido na aba autorização com o tipo bearer token;
     9. headers deve conter [{"key":"Accept","value":"application/json","description":null,"type":"text","enabled":true}];
     10. espera-se o seguinte resultados:{
-
-
-    }
+            {
+            "message": "production record updated"
+            }
+        }
     }
 
 DELETANDO UMA PRODUCTION{
@@ -62,7 +87,10 @@ DELETANDO UMA PRODUCTION{
     1.  utilize a rota (Route::post('/login',[AuthController::class,'login'])->name('register.login');)
     e passe os seguintes parametros: {email e password}
     2. espera-se o seguinte resultados:{
-
+        {
+            "message": "login done",
+            "token": "2|7QmQswGFSAy1j7pBWAKtfTUrvDvTCRKWCvc4VJXi"
+                }
     }
     3. salve o token que foi gerado;
 
@@ -72,16 +100,27 @@ DELETANDO UMA PRODUCTION{
     8. o token salvo  deve ser inserido na aba autorização com o tipo bearer token;
     9. headers deve conter [{"key":"Accept","value":"application/json","description":null,"type":"text","enabled":true}];
     10. espera-se o seguinte resultados:{
-
-
-    }
+            {
+            "message": "production delete"
+            }
+        }
     }
 
 VISUALIZANDO AS PRODUCTIONS CRIADAS{
     - todas as productions{
         1.utilize a rota (Route::get('/productions', [ProductionController::class, 'index']);)
         2. espera-se o seguinte resultados:{
-
+                [
+                    {
+                    "id": 1,
+                    "name": "O Espetacular Homem-Aranha",
+                    "release_date": "2008-04-30",
+                    "type": "M",
+                    "director": "Jon Favreau",
+                    "created_at": "2022-04-08T16:40:50.000000Z",
+                    "updated_at": "2022-04-08T16:48:22.000000Z"
+                    }
+                ]
 
             }
     }
@@ -89,7 +128,15 @@ VISUALIZANDO AS PRODUCTIONS CRIADAS{
         1.  utilize a Route::get('/productions/{id}', [ProductionController::class, 'show'])->name('productions_id.show');
         2.  passe os seguintes parametros: {id}
         2. espera-se o seguinte resultados:{
-    
+            {
+                "id": 4,
+                "name": "WandaVision",
+                "release_date": "2021-01-15",
+                "type": "S",
+                "director": "Matt Shakman",
+                "created_at": "2022-04-08T16:45:06.000000Z",
+                "updated_at": "2022-04-08T16:45:06.000000Z"
+                }
         }
 
     }
@@ -97,7 +144,17 @@ VISUALIZANDO AS PRODUCTIONS CRIADAS{
         1.  utilize a Route::get('/productions/search/{name}', [ProductionController::class, 'search'])->name('productions_name.search');
         2.  passe os seguintes parametros: {name}
         2. espera-se o seguinte resultados:{
-    
+            [
+                {
+                "id": 3,
+                "name": "Vingadores: Guerra Infinita",
+                "release_date": "0208-04-26",
+                "type": "M",
+                "director": "Anthony Russo",
+                "created_at": "2022-04-08T16:43:30.000000Z",
+                "updated_at": "2022-04-08T16:43:30.000000Z"
+                }
+            ]
         }
     }
     
@@ -108,7 +165,10 @@ LOGOUT DO USER ADMIN{
         1.  utilize a rota (Route::post('/login',[AuthController::class,'login'])->name('register.login');)
         e passe os seguintes parametros: {email e password}
         2. espera-se o seguinte resultados:{
-
+                {
+                "message": "login done",
+                "token": "2|7QmQswGFSAy1j7pBWAKtfTUrvDvTCRKWCvc4VJXi"
+                }
         }
         3. salve o token que foi gerado;
 
@@ -118,7 +178,9 @@ LOGOUT DO USER ADMIN{
         8. o token salvo  deve ser inserido na aba autorização com o tipo bearer token;
         9. headers deve conter [{"key":"Accept","value":"application/json","description":null,"type":"text","enabled":true}];
         10. espera-se o seguinte resultados:{
-
+                 {
+                "message": "logout complete and all tokens deleted"
+                }
 
 }
 }
@@ -136,14 +198,34 @@ VOTANDO NA PRODUÇÃO FAVORITA{
 VISUALIZANDO TODOS VOTOS SALVOS{
     1.  utilize a rota Route::get('/votes',[VoteController::class, 'index'])-> name('vote.index');
     2. espera-se o seguinte resultados:{
-
+            [
+                {
+                "id": 1,
+                "id_prod": 1,
+                "name_employee": "1",
+                "team": "chatbot",
+                "age": 25,
+                "genre": "M",
+                "vote": 1,
+                "created_at": "2022-04-08T19:53:37.000000Z",
+                "updated_at": "2022-04-08T19:53:37.000000Z"
+                }
+            ]
     }
 }
 
 VISUALIZANDO PRODUÇÃO FAVORITA{
     1.  utilize a rota Route::get('/filters', [QueryController::class, 'favorite_production'])->name('filters.favorite_production');
     2. espera-se o seguinte resultados:{
-
+            {
+            "message": "favorite production",
+            "query": [
+            {
+            "name": "O Espetacular Homem-Aranha",
+            "qtd_votes": "5"
+            }
+            ]
+            }
     }
 }
 
@@ -151,14 +233,32 @@ VISUALIZANDO PRODUÇÃO FAVORITA POR TIPO{
     1.  utilize a rota Route::get('/filters/{type}', [QueryController::class, 'favorite_byType'])->name('filters.favorite_byType');
     2.  passe os seguintes parametros: {type} que deve ser S - series ou M - movies
     3. espera-se o seguinte resultados:{
-
+        {
+            "message": "favorite production by type",
+            "query": [
+            {
+            "name": "Loki",
+            "qtd_votes": "5"
+            }
+            ]
+        }
     }
 }
 
 VISUALIZANDO TOP 10 DAS PRODUÇÕES FAVORITAS{
     1.  utilize a rota Route::get('/filters/ranking/top10', [QueryController::class, 'top10'])->name('filters.top10');
     2. espera-se o seguinte resultados:{
-
+        {
+            "message": "Top 10",
+            "query": [
+            {
+            "name": "O Espetacular Homem-Aranha",
+            "qtd_votes": "5"
+            },
+            {
+            "name": "Loki",
+            "qtd_votes": "5"
+        }
     }
 }
 
@@ -166,38 +266,80 @@ VISUALIZANDO RANKING PRODUÇÕES FAVORITAS POR GENERO{
     1.  utilize a rota Route::get('/filters/ranking/by/genre/{genre}', [QueryController::class, 'ranking_byGenre'])->name('filters.ranking_byGenre');
     2.  passe os seguintes parametros: {genre} que deve ser F - feminino, M - masculino, N - não-binario, O - prefiro não dizer
     2. espera-se o seguinte resultados:{
-
+        {
+            "message": "Top 10",
+            "query": [
+            {
+            "name": "O Espetacular Homem-Aranha",
+            "qtd_votes": "5"
+            }
+    }
     }
 }
-
 VISUALIZANDO RANKING PRODUÇÕES FAVORITAS POR TEAM{
     1.  utilize a rota Route::get('/filters/ranking/by/team/{team}', [QueryController::class, 'ranking_byTeam'])->name('filters.ranking_byTeam');
     2.  passe os seguintes parametros: {team} 
     2. espera-se o seguinte resultados:{
-
+        {
+            "message": "Ranking by team",
+            "query": [
+            {
+            "name": "O Espetacular Homem-Aranha",
+            "qtd_votes": "1"
+            }
+        }
     }
 }
-
 VISUALIZANDO RANKING PRODUÇÕES FAVORITAS DOS FUNCIONÁRIOS ATÉ 25 ANOS{
     1.  utilize a rota Route::get('/filters/ranking/by/age25', [QueryController::class, 'ranking_byAge25'])->name('filters.ranking_byAge25');
     2. espera-se o seguinte resultados:{
-
+        {
+            "message": "Ranking Age: untill 25 years old",
+            "query": [
+            {
+            "name": "O Espetacular Homem-Aranha",
+            "qtd_votes": "4"
+            },
+            {
+            "name": "Loki",
+            "qtd_votes": "3"
+            }
+        }
     }
 }
 
 VISUALIZANDO RANKING DE PRODUÇÕES FAVORITAS DOS FUNCIONÁRIOS COM IDADE MAIOR QUE 25 ANOS{
     1.  utilize a rota Route::get('/filters/ranking/by/age', [QueryController::class, 'ranking_byAge'])->name('filters.ranking_byAge');
     2. espera-se o seguinte resultados:{
-
-    }
+        {
+            "message": "Ranking Age: untill 25 years old",
+            "query": [
+            {
+            "name": "O Espetacular Homem-Aranha",
+            "qtd_votes": "4"
+            },
+            {
+            "name": "Loki",
+            "qtd_votes": "3"
+            }
+        }
+    }   
 }
 
 VISUALIZANDO PRODUÇÃO FAVORITAS DO FUNCIONÁRIO{
     1.  utilize a rota Route::get('/filters/favorite/{name}', [QueryController::class, 'favorite'])->name('filters.favorite');
     2.  passe os seguintes parametros: {name_employee} 
     3. espera-se o seguinte resultados:{
-
+        {
+            "message": "Favorite Production:",
+            "query": [
+            {
+            "name_employee": "Kevin",
+            "name": "O Espetacular Homem-Aranha 2"
+            }
+            ]
+        }
     }
-}
+}   
 
 
